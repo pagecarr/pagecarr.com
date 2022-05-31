@@ -1,15 +1,32 @@
 <html>
 
-	<head>
+<head>
+	<script type="text/javascript">
+		function toggleMute() {
+			var videos = document.getElementsByTagName('video');
+			for (var i = videos.length - 1; i >= 0; i--) {
+				videos[i].muted = !videos[i].muted
+			}
 
-		<body bgcolor="white">
-			<table style="height: 100%; width: 100%; " border="0" cellspacing="10" cellpadding="0" bgcolor="white">
-				<tr style="text-align: center; height: 100%; width: 100%; " bgcolor="white">
-					<td><embed height="240" src="http://www.pagecarr.com/fountain640A.mp4" autoplay="true" controller="false" loop="true" scale="0.75" width="320"><embed height="240"scale="0.75" width="160" ><embed height="240" src="http://www.pagecarr.com/fountain640B.mp4" autoplay="true" controller="false" loop="true" scale="0.75" width="320">
-				</tr>
-			</table>
-		</body>
+		}
+	</script>
+</head>
 
-	</head>
 
-	</html>
+
+<body bgcolor="white">
+	<button onclick="toggleMute()">UNMUTE</button>
+	<table style="height: 100%; width: 100%; " border="0" cellspacing="0" cellpadding="0" bgcolor="white">
+		<tr style="text-align: center; height: 100%; width: 100%; " bgcolor="white">
+			<td>
+				<video controls="controls" width="640" height="480" autoplay="autoplay" muted loop="loop"
+				name="Video Name" src="./fountain640A.mp4"></video>
+
+				<video controls="controls" width="640" height="480" autoplay="autoplay" muted loop="loop" 
+				name="Video Name" src="./fountain640B.mp4"></video>
+			</td>
+		</tr>
+
+	</table>
+</body>
+</html>
